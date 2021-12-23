@@ -17,6 +17,7 @@ public class Equation {
 		c = scanner.nextInt();
 
 		double condition = b * b - 4 * a * c;
+
 		if (condition > 0) {
 			double result1, result2;
 			result1 = (-b + Math.sqrt(condition)) / 2 * a;

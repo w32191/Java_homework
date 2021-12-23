@@ -6,9 +6,20 @@ public class Factor {
 
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
+    System.out.println("請輸入數字：");
     int input = scanner.nextInt();
-    int factor;
+    String result = "的因數為：";
+    for (int i = 1; i <= input; i++) {
+      if (input % i == 0) {
+        result += i;
+        if (input != i) {
+          result += ",";
+        }
+      }
+    } //end of for()
+    System.out.println(input + result);
 
+    scanner.close();
 
   }
 }
