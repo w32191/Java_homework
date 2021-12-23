@@ -12,22 +12,32 @@ public class Stars {
       System.out.print("\n");
     }
     System.out.println("------------------");
-
     //second
-    int rows = 5;
-    // 控制行數
-    for (int i = rows; i > 0; i--) {
-      // 每行的空格數為 rows-i個
-      for (int j = 0; j < rows - i; j++) {
-        System.out.print(" ");
+    for (int i = 1; i <= 5; i++) {
+      for (int k = 0; k < i - 1; k++) {
+        System.out.print("__");
       }
-      // 每行的符號個數為 i個或者 2*i-1個(i個為直角三角形,2*i-1個為等腰三角形)
-      for (int k = 0; k < i; k++) {
-        System.out.print("*");
+      for (int j = 1; j <= 5 - (i - 1); j++) {
+        System.out.print(" *");
       }
-      // 列印完每行的空格和符號,進行換行
       System.out.println();
     }
 
+    System.out.println("------------------");
+
+    //third
+    for (int i = 1; i <= 5; i++) {
+
+      //每行空格的個數
+      for (int k = 1; k <= 5 - i; k++) {  //空格數=行數-行號
+        System.out.print(" ");
+      }
+
+      //每行*的個數
+      for (int j = 1; j <= 2 * i - 1; j++) {
+        System.out.print("*");
+      }
+      System.out.println();
+    }
   }
 }
