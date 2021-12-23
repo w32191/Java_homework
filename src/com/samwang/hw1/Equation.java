@@ -23,7 +23,7 @@ public class Equation {
 			result2 = (-b - Math.sqrt(condition)) / 2 * a;
 			System.out.println("x為" + result1 + " & " + result2);
 		} else if (condition == 0) {
-			double result = -b / 2 * a;
+			double result = -b / (2 * a);
 			System.out.println("x為" + result);
 		} else {
 			System.out.println("沒有實根");
