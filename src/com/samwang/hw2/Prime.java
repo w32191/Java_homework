@@ -10,25 +10,17 @@ public class Prime {
     System.out.println("input a number:");
     int inputNumber = scanner.nextInt();
 
-    int[] prime = new int[1000];
-    int count = 0;
-
-    for (int i = 1; i < inputNumber; i++) {
-
-      if (i == 2) {
-        prime[count] = inputNumber;
-        count++;
-      } else if (inputNumber > 2) {
-
-        for (int j = 3; j <= inputNumber; j += 2) {
-          if (inputNumber % j != 0) {
-            prime[count] = j;
-            count++;
-          }
-        } //end of inner for()
-      } //end of if()
-    } //end of outer for()
-
-    System.out.println(Arrays.toString(prime));
+    for (int i = 2; i < inputNumber; i++) {
+      boolean isPrime = true;
+      for (int j = 2; j < i; j++) {
+        if (i % j == 0) {
+          isPrime = false;
+          break;
+        }
+      }
+      if (isPrime) {
+        System.out.println(i);
+      }
+    }
   }
 }
