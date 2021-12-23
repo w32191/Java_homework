@@ -16,27 +16,23 @@ public class Password {
 
     int count = 0;
 
-
     do {
       System.out.println("請輸入密碼:");
       inputPassword = scanner.nextLine();
-      if (!inputPassword.equals(correctPassword)) {
-          System.out.println("請輸入密碼:");
-          inputPassword = scanner.nextLine();
-          count++;
-      }
-      else {
+
+      if (inputPassword.equals(correctPassword)) {
         System.out.println("密碼輸入正確，歡迎使用本系統！");
-        break ;
+        break;
+
+      } else {
+        count++;
       }
-    } while (count<3);
 
-    if(count==2){
-      System.out.println("密碼輸入超過三次！");
-    }
-
-
-
+      if (count >= 3) {
+        System.out.println("密碼輸入超過三次！");
+        break;
+      }
+    } while (true);
 
 
   }
