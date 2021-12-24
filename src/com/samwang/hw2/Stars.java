@@ -15,10 +15,10 @@ public class Stars {
     //second
     for (int i = 1; i <= 5; i++) {
       for (int k = 0; k < i - 1; k++) {
-        System.out.print("__");
+        System.out.print("  ");
       }
       for (int j = 1; j <= 5 - (i - 1); j++) {
-        System.out.print("_*");
+        System.out.print(" *");
       }
       System.out.println();
     }
