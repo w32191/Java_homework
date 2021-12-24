@@ -3,6 +3,8 @@ package com.samwang.hw2;
 import java.util.Scanner;
 
 public class Factor {
+  //輸入一正整數，求其所有的因數。
+  //說明：36的因數為1, 2, 3, 4, 6, 9, 12, 18, 36。
 
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
