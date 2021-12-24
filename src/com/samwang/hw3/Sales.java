@@ -40,9 +40,7 @@ public class Sales {
 //    int productD = array[0][3] + array[1][3] + array[2][3];
 //    int productE = array[0][4] + array[1][4] + array[2][4];
 
-
-
-      }
+      }   //end of for(j)
       if (i == 0) {
         System.out.println("Jean 銷售總金額:$" + sum);
         performance[0] = sum;
@@ -52,8 +50,8 @@ public class Sales {
       } else {
         System.out.println("Tina 銷售總金額:$" + sum);
         performance[2] = sum;
-      }
-    }
+      }   //end of if(performance)
+    }   //end of for(i)
 
     //b. 有最好業績（銷售總金額最多者）的銷售員
     System.out.println("----------------------");
@@ -64,7 +62,7 @@ public class Sales {
       if (performance[maxPerformanceIndex] < performance[i]) {
         maxPerformanceIndex = i;
       }
-    }
+    }   //end of for(銷售總金額最多者)
 
     //找performance[] maxIndex
     switch (maxPerformanceIndex) {
@@ -79,14 +77,12 @@ public class Sales {
         break;
       default:
         System.out.println("ERROR!");
-    }
+    }   //end of switch(maxPerformanceIndex)
     System.out.println("的業績最高");
 
     //  c. 每一項產品的銷售總金額
     System.out.println("----------------------");
     System.out.println("C:");
-
-
 
     for (int i = 0; i < product.length; i++) {
       switch (i) {
@@ -141,7 +137,6 @@ public class Sales {
         System.out.println("ERROR!");
     }
     System.out.println(" 的業績最高");
-
 
 
   }
