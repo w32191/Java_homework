@@ -14,11 +14,10 @@ public class Rain {
         {{49.0, 50.0, 51.0}, {52.0, 53.0, 54.0}, {55.0, 56.0, 57.0}, {58.0, 59.0, 60.0}}
     };
 
-    int inputYear, inputSeason, inputMonth;
+    int inputYear, inputSeason, inputMonth, count;
     double allSum = 0, yearSum = 0, seasonSum = 0, monthSum = 0;
     double allAvg, yearAvg, seasonAvg, monthAvg;
-    int count;
-    boolean whileController;
+    boolean doWhileController;
     String inputString;
 
     Scanner scanner = new Scanner(System.in);
@@ -41,7 +40,7 @@ public class Rain {
           }
           allAvg = allSum / count;
           System.out.println("all avg:" + allAvg);
-          whileController = false;
+          doWhileController = false;
           break;
 
         //year
@@ -59,10 +58,9 @@ public class Rain {
               count++;
             }
           }
-
           yearAvg = yearSum / count;
           System.out.println("Year Avg:" + yearAvg);
-          whileController = false;
+          doWhileController = false;
           break;
 
         //season
@@ -81,7 +79,7 @@ public class Rain {
           }
           seasonAvg = seasonSum / count;
           System.out.println("Season Avg:" + seasonAvg);
-          whileController = false;
+          doWhileController = false;
           break;
 
         //month
@@ -100,14 +98,14 @@ public class Rain {
           }
           monthAvg = monthSum / count;
           System.out.println("month Avg:" + monthAvg);
-          whileController = false;
+          doWhileController = false;
           break;
 
         default:
-          whileController = true;
+          doWhileController = true;
       } //end of switch
 
-    } while (whileController);
+    } while (doWhileController);
 
     scanner.close();
 
