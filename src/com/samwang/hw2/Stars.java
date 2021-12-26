@@ -30,7 +30,7 @@ public class Stars {
     for (int i = 1; i <= 5; i++) {
 
       //每行空格的個數
-      for (int k = 1; k <= 5 - i; k++) {  //空格數=行數-行號
+      for (int k = 1; k <= 5 - i; k++) {  //空格數 = 行數 - 行號
         System.out.print(" ");
       }
 

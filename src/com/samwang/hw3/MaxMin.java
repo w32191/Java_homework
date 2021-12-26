@@ -13,9 +13,6 @@ public class MaxMin {
       if (max < array[i]) {
         max = array[i];
       }
-    }
-
-    for (int i = 1; i < array.length; i++) {  //從index=1開始
       if (min > array[i]) {
         min = array[i];
       }
