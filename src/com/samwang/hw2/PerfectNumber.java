@@ -1,7 +1,5 @@
 package com.samwang.hw2;
 
-import java.util.Arrays;
-
 public class PerfectNumber {
 
   public static void main(String[] args) {

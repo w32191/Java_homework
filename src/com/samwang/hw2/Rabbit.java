@@ -8,10 +8,10 @@ public class Rabbit {
     boolean isAnswer = true;
     while (isAnswer) {
       if (rabbits % 3 == 1 && rabbits % 5 == 3 && rabbits % 7 == 1) {
-        System.out.println(rabbits+"隻兔子");
+        System.out.println(rabbits + "隻兔子");
         break;
       }
       rabbits++;
-    }
+    }   //end of while()
   }
 }

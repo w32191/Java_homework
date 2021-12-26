@@ -8,9 +8,10 @@ public class Stars {
       for (int j = 1; j <= i; j++) {
         System.out.print("*");
         System.out.print(" ");
-      }
+      }   // end of inner for()
       System.out.print("\n");
-    }
+    }   // end of outer for()
+
     System.out.println("------------------");
     //second
     for (int i = 1; i <= 5; i++) {
@@ -23,7 +24,6 @@ public class Stars {
       System.out.println();
     }
 
-    System.out.println();
     System.out.println("------------------");
 
     //third

@@ -7,10 +7,10 @@ public class Rope {
     int rope = 3000;
     int day = 0;
 
-    while(rope>5){
-      rope/=2;
+    while (rope > 5) {
+      rope /= 2;
       day++;
     }
-    System.out.println(day+"days");
+    System.out.println(day + "days");
   }
 }

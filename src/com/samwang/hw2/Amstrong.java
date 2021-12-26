@@ -12,13 +12,13 @@ public class Amstrong {
       a = i / 100;
       b = i % 100 / 10;
       c = i % 10;
-      //System.out.println(a + "+" + b + "+" + c);
 
       if (i == a * a * a + b * b * b + c * c * c) {
         Amstrong[count] = i;
         count++;
       }
     } //end of for()
+
     System.out.print("三位數中所有Amstrong數：");
     for (int i : Amstrong) {
       if (i != 0) {
