@@ -14,89 +14,102 @@ public class Rain {
         {{49.0, 50.0, 51.0}, {52.0, 53.0, 54.0}, {55.0, 56.0, 57.0}, {58.0, 59.0, 60.0}}
     };
 
-    Scanner scanner = new Scanner(System.in);
-    String inputHint = "Please input \"all\"、\"year\"、\"season\" or \"month\":";
-    System.out.println(inputHint);
-    String inputString = scanner.nextLine();
-
     int inputYear, inputSeason, inputMonth;
     double allSum = 0, yearSum = 0, seasonSum = 0, monthSum = 0;
-    double yearAvg, seasonAvg, monthAvg;
+    double allAvg, yearAvg, seasonAvg, monthAvg;
     int count;
+    boolean whileController;
+    String inputString;
 
-    switch (inputString) {
-      case "all":
-        //all
-        for (int i = 0; i < rain.length; i++) {
-          for (int j = 0; j < rain[i].length; j++) {
-            for (int k = 0; k < rain[i][j].length; k++) {
-              allSum += rain[i][j][k];
+    Scanner scanner = new Scanner(System.in);
+
+    do {
+      System.out.println("Please input \"all\"、\"year\"、\"season\" or \"month\":");
+      inputString = scanner.nextLine();
+
+      switch (inputString) {
+        case "all":
+          //all
+          count = 0;
+          for (int i = 0; i < rain.length; i++) {
+            for (int j = 0; j < rain[i].length; j++) {
+              for (int k = 0; k < rain[i][j].length; k++) {
+                allSum += rain[i][j][k];
+                count++;
+              }
             }
           }
-        }
-        System.out.printf("ALL Sum: %.2f", allSum);
-        break;
+          allAvg = allSum / count;
+          System.out.println("all avg:" + allAvg);
+          whileController = false;
+          break;
 
-      //year
-      case "year":
-        do {
-          System.out.println("請輸入年份(1~5):");
-          inputYear = scanner.nextInt();
-        } while (inputYear > 5 || inputYear < 1);
-        count = 0;
+        //year
+        case "year":
+          do {
+            System.out.println("請輸入年份(1~5):");
+            inputYear = scanner.nextInt();
+          } while (inputYear > 5 || inputYear < 1);
 
-        //加總一整年的月份
-        for (int season = 0; season < rain[inputYear - 1].length; season++) {
-          for (int month = 0; month < rain[inputYear - 1][season].length; month++) {
-            yearSum += rain[inputYear - 1][season][month];
-            count++;
+          count = 0;
+          //加總一整年的月份
+          for (int season = 0; season < rain[inputYear - 1].length; season++) {
+            for (int month = 0; month < rain[inputYear - 1][season].length; month++) {
+              yearSum += rain[inputYear - 1][season][month];
+              count++;
+            }
           }
-        }
 
-        yearAvg = yearSum / count;
+          yearAvg = yearSum / count;
+          System.out.println("Year Avg:" + yearAvg);
+          whileController = false;
+          break;
 
-        System.out.printf("Year Avg: %.2f", yearAvg);
-        break;
+        //season
+        case "season":
+          do {
+            System.out.print("請輸入季節(1~4):");
+            inputSeason = scanner.nextInt();
+          } while (inputSeason > 4 || inputSeason < 1);
 
-      //season
-      case "season":
-        do {
-          System.out.print("請輸入季節(1~4):");
-          inputSeason = scanner.nextInt();
-        } while (inputSeason > 4 || inputSeason < 1);
-        count = 0;
-
-        for (int year = 0; year < rain.length; year++) {
-          for (int month = 0; month < rain[year][inputSeason - 1].length; month++) {
-            seasonSum += rain[year][inputSeason - 1][month];
-            count++;
+          count = 0;
+          for (int year = 0; year < rain.length; year++) {
+            for (int month = 0; month < rain[year][inputSeason - 1].length; month++) {
+              seasonSum += rain[year][inputSeason - 1][month];
+              count++;
+            }
           }
-        }
-        seasonAvg = seasonSum / count;
-        System.out.printf("Season Avg: %.2f", seasonAvg);
-        break;
+          seasonAvg = seasonSum / count;
+          System.out.println("Season Avg:" + seasonAvg);
+          whileController = false;
+          break;
 
-      //month
-      case "month":
-        do {
-          System.out.print("請輸入月份(1~12):");
-          inputMonth = scanner.nextInt();
-        } while (inputMonth > 12 || inputMonth < 1);
-        count = 0;
+        //month
+        case "month":
+          do {
+            System.out.print("請輸入月份(1~12):");
+            inputMonth = scanner.nextInt();
+          } while (inputMonth > 12 || inputMonth < 1);
 
-        for (int year = 0; year < rain.length; year++) {
-          for (int season = 0; season < rain[year].length; season++) {
-            monthSum += rain[year][season][(inputMonth - 1) / 4];
-            count++;
+          count = 0;
+          for (int year = 0; year < rain.length; year++) {
+            for (int season = 0; season < rain[year].length; season++) {
+              monthSum += rain[year][season][(inputMonth - 1) / 4];
+              count++;
+            }
           }
-        }
-        monthAvg = monthSum / count;
-        System.out.printf("month Avg: %.2f", monthAvg);
-        break;
+          monthAvg = monthSum / count;
+          System.out.println("month Avg:" + monthAvg);
+          whileController = false;
+          break;
 
-      default:
-        System.out.println(inputHint);
-    } //end of switch
+        default:
+          whileController = true;
+      } //end of switch
+
+    } while (whileController);
+
+    scanner.close();
 
 
   }
