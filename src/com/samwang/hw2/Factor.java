@@ -10,16 +10,25 @@ public class Factor {
     Scanner scanner = new Scanner(System.in);
     System.out.println("請輸入數字：");
     int input = scanner.nextInt();
-    String result = "的因數為：";
+    int[] factors = new int[100];
+    int index = 0;
     for (int i = 1; i <= input; i++) {
       if (input % i == 0) {
-        result += i;
-        if (input != i) {
-          result += ",";
-        }
+        factors[index] = i;
+        index++;
       }
     } //end of for()
-    System.out.println(input + result);
+
+    System.out.print(input + "的因數:");
+    for (int i = 0; i < factors.length; i++) {
+      if (factors[i] == 0) {
+        break;
+      }
+      System.out.print(factors[i]);
+      if(factors[i]!=input){
+        System.out.print(",");
+      }
+    } //end of for()
 
     scanner.close();
 
