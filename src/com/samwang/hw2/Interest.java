@@ -3,7 +3,7 @@ package com.samwang.hw2;
 public class Interest {
 
   public static void main(String[] args) {
-
+//test
     int n = 1, P = 100000;
     double A, B;
 
