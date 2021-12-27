@@ -18,12 +18,12 @@ public class Refund {
 			System.out.println("不必找錢");
 		} else {
 			int change = pay - price;
-			int thousandDallor = 0, fiveHundredDollor = 0, hundredDollar = 0, fiftyDollor = 0, tenDollor = 0,
+			int thousandDollor = 0, fiveHundredDollor = 0, hundredDollar = 0, fiftyDollor = 0, tenDollor = 0,
 					fiveDollor = 0, oneDollor = 0;
 			String refund = "應找回：";
 
-			thousandDallor = change / 1000;
-			change -= thousandDallor * 1000;
+			thousandDollor = change / 1000;
+			change -= thousandDollor * 1000;
 
 			fiveHundredDollor = change / 500;
 			change -= fiveHundredDollor * 500;
@@ -42,8 +42,8 @@ public class Refund {
 
 			oneDollor = change / 1;
 
-			if (thousandDallor != 0) {
-				refund += thousandDallor + "張一千元,";
+			if (thousandDollor != 0) {
+				refund += thousandDollor + "張一千元,";
 			}
 			if (fiveHundredDollor != 0) {
 				refund += fiveHundredDollor + "張五百元,";
