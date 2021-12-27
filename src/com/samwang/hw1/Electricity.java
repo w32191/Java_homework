@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Electricity {
 
   public static void main(String[] args) {
-    //test git
     System.out.println("非營業用請輸入(A),營業用請輸入(B)：");
     Scanner scanner = new Scanner(System.in);
     String isCommercial = scanner.nextLine();
