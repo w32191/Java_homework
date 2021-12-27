@@ -3,7 +3,7 @@ package com.samwang.hw2;
 public class Interest {
 
   public static void main(String[] args) {
-    boolean isOverMoney = true;
+
     int n = 1;
     double A, B;
     while (true) {
