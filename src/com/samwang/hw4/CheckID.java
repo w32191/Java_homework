@@ -38,7 +38,7 @@ public class CheckID {
     else if (!threeToTenIsNumber) {
       return false;
     }
-    //在自訂一個method 來檢查檢查碼
+    //再自訂一個method checkRule 來檢查檢查碼
     else if (!checkIdRule(firstChar, secondNumber, threeToTenNumber)) {
       return false;
     } else {
@@ -50,26 +50,32 @@ public class CheckID {
 
   public static boolean checkIdRule(char firstChar, int secondNumber, String threeToTenNumber) {
     String checkStr = "ABCDEFGHJKLMNPQRSTUVXYZIO";
-    // 10~35
-    int firstEngToCheck = checkStr.indexOf(firstChar) + 10;
-    int sum = 0;
-    sum += firstEngToCheck / 10 + (firstEngToCheck % 10) * 9 + secondNumber * 8;
 
+    //英文對照字串位置從10~35後，取10位數x1 + 個位數x9
+    //相加後再加上：第2碼數字x8
+    int checkNumberOfEng = checkStr.indexOf(firstChar) + 10;
+    int sum = 0;
+    sum += checkNumberOfEng / 10 + (checkNumberOfEng % 10) * 9 + secondNumber * 8;
+
+    //  上面加完後，再加：第3碼x7 + 第4碼x6 + ... + 第9碼x1
+    //  因為第10碼不算，所以取i < threeToTenNumber.length()-1，這樣只會取到第9碼
     for (int i = 0, j = 7; i < threeToTenNumber.length() - 1; i++, j--) {
+      //用Character.getNumericValue()可以將char正確轉換為數字
       sum += Character.getNumericValue(threeToTenNumber.charAt(i)) * j;
     }
-    //  加後之值除以模數 10 取其餘數
+
+    //  全部加完後，除以 10 取其餘數
     //  1 2 1 / 1 0 = 12 ‧‧‧餘數 1
-    //  由10減去餘數得檢查號碼，若餘數為 0 時，則設定其檢查碼為 0
-    //  10 – 1 = 9
+    //  再用 10 減去餘數 得檢查號碼
+    //  10 – 1(餘數) = 9(最後一碼檢查碼)
+    //  若餘數為 0 時，則設定其檢查碼為 0，所以要在％一次
     return Character.getNumericValue(threeToTenNumber.charAt(7)) == (10 - (sum % 10)) % 10;
   }
 
-  public static void main(String[] args) {
 
+  public static void main(String[] args) {
     String id = "A123456789";
     System.out.println(CheckID.isID(id));
-
   }
 }
 
