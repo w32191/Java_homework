@@ -19,11 +19,14 @@ public class Amstrong {
       }
     } //end of for()
 
-    System.out.print("三位數中所有Amstrong數：");
-    for (int i : Amstrong) {
-      if (i != 0) {
-        System.out.print(i + ",");
+    System.out.println("三位數中所有Amstrong數：");
+
+    for (int i = 0; i < Amstrong.length; i++) {
+      //因 Amstrong[] 後面都會是0，所以當取出到0的時候就結束
+      if(Amstrong[i] == 0){
+        break;
       }
+      System.out.println(Amstrong[i]);
     }
 
   }

@@ -34,6 +34,7 @@ public class Password {
       }
     } while (true);
 
+    scanner.close();
 
   }
 }

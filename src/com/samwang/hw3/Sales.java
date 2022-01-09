@@ -26,19 +26,7 @@ public class Sales {
 
         sum += array[i][j] * price[j];  //加總銷售總額(人)
 
-//        sum += array[i][0] * price[0]
-//            + array[i][1] * price[1]
-//            + array[i][2] * price[2]
-//            + array[i][3] * price[3]
-//            + array[i][4] * price[4];
-
         product[j] += array[i][j] * price[j];   //加總每個產品銷售額
-
-//    int productA = array[0][0] + array[1][0] + array[2][0];
-//    int productB = array[0][1] + array[1][1] + array[2][1];
-//    int productC = array[0][2] + array[1][2] + array[2][2];
-//    int productD = array[0][3] + array[1][3] + array[2][3];
-//    int productE = array[0][4] + array[1][4] + array[2][4];
 
       }   //end of for(j)
       if (i == 0) {

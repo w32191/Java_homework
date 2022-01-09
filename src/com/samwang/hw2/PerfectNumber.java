@@ -9,10 +9,12 @@ public class PerfectNumber {
     for (int i = 1; i <= 100; i++) {//找出1~100
       int sum = 0;
       for (int j = 1; j < i; j++) {
+        // 找因數，餘數為0就是因數，加總上去
         if (i % j == 0) {
           sum += j;
         }
       }
+      //找PerfectNumber
       if (i == sum) {
         perfectNumber[count] = i;
         count++;

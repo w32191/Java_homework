@@ -6,6 +6,7 @@ public class Interest {
     int n = 1, P = 100000;
     double A, B;
 
+    //用while(true)的無窮迴圈，直到B>A結束
     while (true) {
       //A
       A = P * (1 + 0.1 * n);

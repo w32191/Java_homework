@@ -8,7 +8,8 @@ public class Salary {
 		System.out.println("請輸入工作時數:");
 		Scanner scanner = new Scanner(System.in);
 		int input = scanner.nextInt();
-		double salary;
+		double salary;	//薪資
+
 		if (input <= 60) {
 			salary = input * 150;
 		} else if (input > 60 && input <= 80) {

@@ -22,6 +22,7 @@ public class Rain {
 
     Scanner scanner = new Scanner(System.in);
 
+    //用doWhileController控制do while(),只要沒有輸入正確,就一直要求輸入
     do {
       System.out.println("Please input \"all\"、\"year\"、\"season\" or \"month\":");
       inputString = scanner.nextLine();

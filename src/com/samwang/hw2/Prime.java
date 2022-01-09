@@ -11,13 +11,19 @@ public class Prime {
     int inputNumber = scanner.nextInt();
 
     for (int i = 2; i < inputNumber; i++) {
-      boolean isPrime = true;
+      boolean isPrime = true;   //預設為質數
+
+      //質數從2開始
       for (int j = 2; j < i; j++) {
+
+        //當餘數為0表示i被ｊ整除，i就不是質數
         if (i % j == 0) {
           isPrime = false;
           break;
         } //end of inner if()
       } //end of inner for()
+
+      //如果Ｊ的for()沒有被break，表示他是質數，就print
       if (isPrime) {
         System.out.println(i);
       }   //end of outer if()

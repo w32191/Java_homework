@@ -13,6 +13,7 @@ public class Factor {
     int[] factors = new int[100];
     int index = 0;
     for (int i = 1; i <= input; i++) {
+      //i從1加到等於輸入的數字,只要餘數為0，i就是因數
       if (input % i == 0) {
         factors[index] = i;
         index++;
@@ -20,6 +21,7 @@ public class Factor {
     } //end of for()
 
     System.out.print(input + "的因數:");
+
     for (int i = 0; i < factors.length; i++) {
       if (factors[i] == 0) {
         break;

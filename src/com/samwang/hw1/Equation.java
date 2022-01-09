@@ -19,11 +19,13 @@ public class Equation {
 		double condition = b * b - 4 * a * c;
 
 		if (condition > 0) {
+			// 有兩個實根
 			double result1, result2;
 			result1 = (-b + Math.sqrt(condition)) / 2 * a;
 			result2 = (-b - Math.sqrt(condition)) / 2 * a;
 			System.out.println("x為" + result1 + " & " + result2);
 		} else if (condition == 0) {
+			//只有一個實根
 			double result = -b / (2 * a);
 			System.out.println("x為" + result);
 		} else {
