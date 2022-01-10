@@ -6,25 +6,15 @@ public class CheckID {
 
     //取第1個英文字
     char firstChar = id.charAt(0);
-
     //第2個字。用Character.getNumericValue()這個API，可以將char轉為int值
     int secondNumber = Character.getNumericValue(id.charAt(1));
-
     //用String.substring()取第3到10碼數字字串
     String threeToTenNumber = id.substring(2, 10);
-    //預設3~10碼為數字
-    boolean threeToTenIsNumber = true;
-    //用for控制字串charAt()取出char，再用Character.isDigit()判斷這個char是否是數字
-    for (int i = 0; i < threeToTenNumber.length(); i++) {
-      if (!Character.isDigit(threeToTenNumber.charAt(i))) {
-        threeToTenIsNumber = false;
-      }
-    }
+
 
     //檢查長度是否為10碼
     if (id.length() != 10) {
       return false;
-
     }
     //直接用charAt()回傳的char比較,小於A或大於Ｚ,回傳false,表示不是大寫字母
     else if (firstChar < 'A' || firstChar > 'Z') {
@@ -34,21 +24,28 @@ public class CheckID {
     else if (secondNumber != 1 && secondNumber != 2) {
       return false;
     }
-    //在上方已有用boolean threeToTenIsNumber判斷第3~10碼是不是數字
-    else if (!threeToTenIsNumber) {
+    //call 自訂方法 isNumeric()，來判斷第3~10碼是不是數字
+    else if (!isNumeric(threeToTenNumber)) {
       return false;
     }
-    //再自訂一個method checkRule 來檢查檢查碼
-    else if (!checkIdRule(firstChar, secondNumber, threeToTenNumber)) {
-      return false;
-    } else {
-      return true;
-    }
+    //call 自訂方法 checkRule() 來檢查檢查碼
+    else
+      return checkIdRule(firstChar, secondNumber, threeToTenNumber);
 
   }
 
+  private static boolean isNumeric(String str) {
+    //用for控制字串charAt()取出char，再用Character.isDigit()判斷這個char是否是數字
+    for (int i = 0; i < str.length(); i++) {
+      if (!Character.isDigit(str.charAt(i))) {
+        return false;
+      }
+    }
+    return true;
+  }
 
-  public static boolean checkIdRule(char firstChar, int secondNumber, String threeToTenNumber) {
+
+  private static boolean checkIdRule(char firstChar, int secondNumber, String threeToTenNumber) {
     String checkStr = "ABCDEFGHJKLMNPQRSTUVXYZIO";
 
     //英文對照字串位置從10~35後，取10位數x1 + 個位數x9
@@ -72,10 +69,5 @@ public class CheckID {
     return Character.getNumericValue(threeToTenNumber.charAt(7)) == (10 - (sum % 10)) % 10;
   }
 
-
-  public static void main(String[] args) {
-    String id = "A123456789";
-    System.out.println(CheckID.isID(id));
-  }
 }
 
