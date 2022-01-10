@@ -15,11 +15,8 @@ public class Verifier {
 
   //(2)產生四個數字且不重複的驗證碼
   public static String fourRandomUniqueVerifier() {
-    int length = 4;
-    String resultStr = "";
-    for (int i = 0; i < 4; i++) {
 
-    }
+    String resultStr = "";
 
     do {
       String addStr = Integer.toString((int) (Math.random() * 10));
