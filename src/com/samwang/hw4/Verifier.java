@@ -1,7 +1,6 @@
 package com.samwang.hw4;
 
 public class Verifier {
-  //目前只完成第一小題
 
 
   //(1)產生四個數字的驗證碼
@@ -14,7 +13,7 @@ public class Verifier {
     return result;
   }
 
-  //(2)未完成
+  //(2)產生四個數字且不重複的驗證碼
   public static String fourRandomUniqueVerifier() {
     int length = 4;
     String resultStr = "";
