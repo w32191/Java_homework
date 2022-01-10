@@ -5,53 +5,44 @@ public class Verifier {
 
 
   //(1)產生四個數字的驗證碼
-  public static int fourRandomVerifier() {
+  public static String fourRandomVerifier() {
     //Math.random()會產生0.0~1.0之間的亂數 (無限接近於1，但不包含1)
-    //假設產生0.99999999999999＊10000後，再轉為int也只會取到9999
-    int result;
-
-    //因為隨機數會是1~9999，所以給他一個迴圈，直到產生的數超過999才停下來，這樣就會有四位數
-    do {
-      result = (int) (Math.random() * 10000);
-    } while (result <= 999);
-
+    String result = "";
+    for (int i = 0; i < 4; i++) {
+      result += (int) (Math.random() * 10);
+    }
     return result;
   }
 
   //(2)未完成
-  public static int fourRandomUniqueVerifier() {
-    int result;
-    int[] verifier = new int[4];
-    boolean unique = true;
+  public static String fourRandomUniqueVerifier() {
+    int length = 4;
+    String resultStr = "";
+    for (int i = 0; i < 4; i++) {
+
+    }
+
     do {
-      result = (int) (Math.random() * 10000);
-      verifier[0] = result / 1000;
-      verifier[1] = (result % 1000) / 100;
-      verifier[2] = (result % 100) / 10;
-      verifier[3] = result % 10;
-      int temp = verifier[0];
-      for (int i = 1; i < verifier.length; i++) {
-        if (temp == verifier[i]) {
-          unique = false;
-          break;
+      String addStr = Integer.toString((int) (Math.random() * 10));
+      //如果字串長度不等於0表示有內容,才搜尋有沒有重複
+      if (resultStr.length() != 0 ) {
+        //檢查resultStr中，有沒有包含這次產生的亂數addStr
+        if (!resultStr.contains(addStr)) {
+          resultStr += addStr;
         }
-      }
-      temp = verifier[1];
-      for (int i = 2; i < verifier.length; i++) {
-        if (temp == verifier[i]) {
-          unique = false;
-          break;
-        }
+      } else {
+        resultStr += addStr;
       }
 
-    } while (!unique);
+    } while (resultStr.length() < 4); //長度到4就停
 
-    return result;
+    return resultStr;
   }
 
 
   public static void main(String[] args) {
     System.out.println("(1)產生四個數字的驗證碼：" + fourRandomVerifier());
+    System.out.println("(2)產生四個數字且不重複的驗證碼：" + fourRandomUniqueVerifier());
 
   }
 
