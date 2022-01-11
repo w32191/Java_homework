@@ -8,7 +8,7 @@ public class Rabbit {
 
     //兔子從1開始用while(true)無窮迴圈開始加1，直到滿足條件break
     while (true) {
-      if (rabbits % 3 == 1 && rabbits % 5 == 3 && rabbits % 7 == 1) {
+      if (rabbits % 3 == 1 && rabbits % 5 == 3 && rabbits % 7 == 2) {
         System.out.println(rabbits + "隻兔子");
         break;
       }

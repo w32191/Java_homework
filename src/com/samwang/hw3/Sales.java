@@ -14,6 +14,7 @@ public class Sales {
         {77, 33, 68, 45, 23},  //Tom
         {43, 55, 43, 67, 65}   //Tina
     };
+
     int[] price = {12, 16, 10, 14, 15}; // 單價分別為12、16、10、14、15元
     int[] performance = new int[3];   //存放每個人的銷售總額(業績)
     int[] product = new int[5];   //存放每個產品銷售總額
