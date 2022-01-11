@@ -25,21 +25,17 @@ public class Verifier {
         //檢查resultStr中，有沒有包含這次產生的亂數addStr
         if (!resultStr.contains(addStr)) {
           resultStr += addStr;
-        }
-      } else {
+        } //end of inner if()
+      } //end of outer if()
+      else {
         resultStr += addStr;
       }
-
     } while (resultStr.length() < 4); //長度到4就停
 
     return resultStr;
   }
 
+  //(3)產生六個包含英文字母和數字的驗證碼
 
-  public static void main(String[] args) {
-    System.out.println("(1)產生四個數字的驗證碼：" + fourRandomVerifier());
-    System.out.println("(2)產生四個數字且不重複的驗證碼：" + fourRandomUniqueVerifier());
-
-  }
 
 }
