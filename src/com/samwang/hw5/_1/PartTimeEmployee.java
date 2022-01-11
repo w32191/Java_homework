@@ -1,4 +1,4 @@
-package com.samwang.hw5;
+package com.samwang.hw5._1;
 
 public class PartTimeEmployee extends Employee {
 

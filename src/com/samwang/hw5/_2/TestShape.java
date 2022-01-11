@@ -1,4 +1,4 @@
-package com.samwang.hw5;
+package com.samwang.hw5._2;
 
 public class TestShape {
 
