@@ -1,8 +1,6 @@
 package com.samwang.hw5;
 
-import java.util.concurrent.ExecutorService;
-
-public class TestMain {
+public class TestEmployee {
 
   public static void main(String[] args) {
 
