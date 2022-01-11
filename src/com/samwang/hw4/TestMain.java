@@ -10,5 +10,7 @@ public class TestMain {
     //test Verifier
     System.out.println("(1)產生四個數字的驗證碼：" + Verifier.fourRandomVerifier());
     System.out.println("(2)產生四個數字且不重複的驗證碼：" + Verifier.fourRandomUniqueVerifier());
+    System.out.println("(3)產生六個數字與英文且不重複的驗證碼：" + Verifier.sixRandomUniqueVerifier());
+
   }
 }
