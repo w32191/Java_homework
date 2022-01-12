@@ -5,58 +5,46 @@ import java.util.Scanner;
 public class Electricity {
 
   //非營業用電等級
-  private static final int firstStepOfNonCommercial = 120;
-  private static final int secondStepOfNonCommercial = 330;
-  private static final int thirdStepOfNonCommercial = 500;
-  private static final int fourStepOfNonCommercial = 700;
-  private static final int fiveStepOfNonCommercial = 1000;
-
+  private static final int stepOfNonBusiness[] = {120, 330, 500, 700, 1000};
   //非營業用電費率
-  private static final double firstPriceOfNonCommercial = 1.63;
-  private static final double secondPriceOfNonCommercial = 2.1;
-  private static final double thirdPriceOfNonCommercial = 2.89;
-  private static final double fourPriceOfNonCommercial = 3.94;
-  private static final double fivePriceOfNonCommercial = 4.6;
+  private static final double priceOfNonBusiness[] = {1.63, 2.1, 2.89, 3.94, 4.6};
 
 
   public static double electricityPrice(String isCommercial, int electricity) {
 
-    double totalPrice;
+    double totalPrice = 0;
     if (isCommercial.equals("A")) {
-      if (electricity <= firstStepOfNonCommercial) {
-        totalPrice = electricity * firstPriceOfNonCommercial;
 
-      } else if (electricity <= secondStepOfNonCommercial) {
-        totalPrice = firstStepOfNonCommercial * firstPriceOfNonCommercial
-            + (electricity - firstStepOfNonCommercial) * secondPriceOfNonCommercial;
+      if (electricity <= stepOfNonBusiness[0]) {
+        totalPrice = electricity * priceOfNonBusiness[0];
 
-      } else if (electricity <= thirdStepOfNonCommercial) {
-        totalPrice = firstStepOfNonCommercial * firstPriceOfNonCommercial
-            + (electricity - firstStepOfNonCommercial) * secondPriceOfNonCommercial
-            + (electricity - firstStepOfNonCommercial - secondStepOfNonCommercial)
-            * thirdPriceOfNonCommercial;
-/////////
-      } else if (electricity <= fourStepOfNonCommercial) {
-        totalPrice = firstStepOfNonCommercial * firstPriceOfNonCommercial
-            + (electricity - firstStepOfNonCommercial) * secondPriceOfNonCommercial
-            + (electricity - firstStepOfNonCommercial - thirdStepOfNonCommercial)
-            * thirdPriceOfNonCommercial +
-            (electricity - firstStepOfNonCommercial - thirdStepOfNonCommercial
-                - fourStepOfNonCommercial) * fourPriceOfNonCommercial;
+      } else if (electricity <= stepOfNonBusiness[1]) {
+        totalPrice = electricity * priceOfNonBusiness[0]
+            + (electricity - stepOfNonBusiness[0]) * priceOfNonBusiness[1];
 
-      } else if (electricity <= fiveStepOfNonCommercial) {
-        totalPrice = firstStepOfNonCommercial * firstPriceOfNonCommercial
-            + (electricity - firstStepOfNonCommercial) * secondPriceOfNonCommercial
-            + (electricity - firstStepOfNonCommercial - thirdStepOfNonCommercial)
-            * thirdPriceOfNonCommercial +
-            (electricity - firstStepOfNonCommercial - thirdStepOfNonCommercial
-                - fourStepOfNonCommercial) * fourPriceOfNonCommercial
-            + (electricity - firstStepOfNonCommercial - thirdStepOfNonCommercial
-            - fourStepOfNonCommercial) * fivePriceOfNonCommercial;
+      } else if (electricity <= stepOfNonBusiness[2]) {
+        totalPrice = electricity * priceOfNonBusiness[0]
+            + (electricity - stepOfNonBusiness[0]) * priceOfNonBusiness[1]
+            + (electricity - stepOfNonBusiness[0] - stepOfNonBusiness[1])
+            * priceOfNonBusiness[2];
 
-      } else { // 1001以上
-        totalPrice = 120 * 1.63 + 210 * 2.1 + 170 * 2.89 + 200 * 3.94 + 300 * 4.6
-            + (electricity - 1000) * 5.03;
+      } else if (electricity <= stepOfNonBusiness[3]) {
+        totalPrice = electricity * priceOfNonBusiness[0]
+            + (electricity - stepOfNonBusiness[0]) * priceOfNonBusiness[1]
+            + (electricity - stepOfNonBusiness[0] - stepOfNonBusiness[1])
+            * priceOfNonBusiness[2]
+            + (electricity - stepOfNonBusiness[0] - stepOfNonBusiness[1] - stepOfNonBusiness[2])
+            * priceOfNonBusiness[3];
+
+      } else if (electricity <= stepOfNonBusiness[4]) {
+        totalPrice = electricity * priceOfNonBusiness[0]
+            + (electricity - stepOfNonBusiness[0]) * priceOfNonBusiness[1]
+            + (electricity - stepOfNonBusiness[0] - stepOfNonBusiness[1])
+            * priceOfNonBusiness[2]
+            + (electricity - stepOfNonBusiness[0] - stepOfNonBusiness[1] - stepOfNonBusiness[2])
+            * priceOfNonBusiness[3]
+            + (electricity - stepOfNonBusiness[0] - stepOfNonBusiness[1] - stepOfNonBusiness[2]
+            - stepOfNonBusiness[3]) * priceOfNonBusiness[4];
       }
       return totalPrice;
 
@@ -87,6 +75,7 @@ public class Electricity {
 
     System.out.println("請輸入使用度數:");
     int electricity = scanner.nextInt(); // 度數
+    System.out.println(electricityPrice(isCommercial, electricity));
 
     scanner.close();
 
