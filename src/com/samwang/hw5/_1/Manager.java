@@ -8,8 +8,8 @@ public class Manager extends FullTimeEmployee {
   private final int transportationAllowance = 3000;
 
   public Manager(String name, String male, String inaugurationDay, String phone,
-      String email, int salary, int performanceBonus) {
-    super(name, male, inaugurationDay, phone, email, salary);
+      String email, int salary, int performanceBonus, String position) {
+    super(name, male, inaugurationDay, phone, email, salary, position);
     this.performanceBonus = performanceBonus;
   }
 
@@ -18,9 +18,4 @@ public class Manager extends FullTimeEmployee {
     return super.countOfBasicSalary() + transportationAllowance + performanceBonus;
   }
 
-  @Override
-  public void print() {
-    super.print();
-    System.out.println("職稱：主管");
-  }
 }

@@ -11,8 +11,8 @@ public abstract class FullTimeEmployee extends Employee {
   private int salaryOfMonth;
 
   public FullTimeEmployee(String name, String male, String inaugurationDay, String phone,
-      String email, int salary) {
-    super(name, male, inaugurationDay, phone, email);
+      String email, int salary, String position) {
+    super(name, male, inaugurationDay, phone, email, position);
     this.salary = salary;
   }
 
