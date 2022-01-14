@@ -15,6 +15,7 @@ public class EmployeeFile {
   public void readFile() throws IOException {
     BufferedReader in = new BufferedReader(new FileReader("/Users/samwang/employee.txt"));
     String str;
+    //in.readLine()讀下一行,再給str
     while ((str = in.readLine()) != null) {
       readList.add(str);
     }
