@@ -1,5 +1,6 @@
 package com.samwang.hw4;
 
+import java.util.Calendar;
 import java.util.Scanner;
 
 public class TestMain {
@@ -35,6 +36,10 @@ public class TestMain {
     IDGenerator idGenerator = new IDGenerator();
     idGenerator.idGenerator(city, male);
     System.out.println();
+
+    //test MyCalendar
+    Calendar calendar = new MyCalendar(2022, 5); // MyCalendar(年,月)
+    ((MyCalendar)calendar).printCalendar();
 
 
 

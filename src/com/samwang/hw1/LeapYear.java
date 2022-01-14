@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class LeapYear {
 
-  public static boolean isLeapYear(int year) {
+  public static boolean isLeapYearOrNot(int year) {
 
     if (year % 400 == 0) {
       //每四百年一閏
