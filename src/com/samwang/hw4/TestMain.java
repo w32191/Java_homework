@@ -13,7 +13,6 @@ public class TestMain {
     System.out.println("ID:" + id + " is " + CheckID.isID(id));
     System.out.println();
 
-
     //test Verifier
     System.out.println("==========第二題==========");
     System.out.println("(1)產生四個數字的驗證碼：" + Verifier.fourRandomVerifier());
@@ -21,27 +20,24 @@ public class TestMain {
     System.out.println("(3)產生六個數字與英文且不重複的驗證碼：" + Verifier.sixRandomUniqueVerifier());
     System.out.println();
 
-
     //test Poker
     System.out.println("==========第三題==========");
     Poker poker = new Poker();
     poker.randomCard();
     System.out.println();
 
-
     //test IDGenerator
     System.out.println("==========第四題==========");
     String city = "台中縣";
     String male = "男";
     IDGenerator idGenerator = new IDGenerator();
-    idGenerator.idGenerator(city, male);
+    System.out.println(city + "，" + male + "：" + idGenerator.idGenerator(city, male));
     System.out.println();
 
     //test MyCalendar
     System.out.println("==========第五題==========");
     Calendar calendar = new MyCalendar(2022, 1); // MyCalendar(年,月)
-    ((MyCalendar)calendar).printCalendar();
-
+    ((MyCalendar) calendar).printCalendar();
 
 
   }

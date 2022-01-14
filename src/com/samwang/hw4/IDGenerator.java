@@ -40,7 +40,7 @@ public class IDGenerator {
   }
 
 
-  public void idGenerator(String city, String male) {
+  public String idGenerator(String city, String male) {
 
     if (male.equals("男")) {
       this.male = "1";
@@ -56,7 +56,7 @@ public class IDGenerator {
       } //end of for()
     } while (!CheckID.isID(result));
 
-    System.out.println(result);
+    return result;
 
   }
 
