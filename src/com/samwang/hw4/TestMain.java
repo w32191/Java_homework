@@ -38,7 +38,8 @@ public class TestMain {
     System.out.println();
 
     //test MyCalendar
-    Calendar calendar = new MyCalendar(2022, 5); // MyCalendar(年,月)
+    System.out.println("==========第五題==========");
+    Calendar calendar = new MyCalendar(2022, 1); // MyCalendar(年,月)
     ((MyCalendar)calendar).printCalendar();
 
 
