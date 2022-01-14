@@ -31,9 +31,9 @@ public class MyCalendar extends GregorianCalendar {
       count++;
     }//end if for(第一行空白)
 
-    //GregorianCalendar.getActualMaximum(Calendar.DATE)
+    //GregorianCalendar.getActualMaximum(Calendar.DAY_OF_MONTH)
     //取現在這個Calendar實例設定的日期 之當月最大天數
-    for (int i = 1; i <= this.getActualMaximum(Calendar.DATE); i++) {
+    for (int i = 1; i <= this.getActualMaximum(Calendar.DAY_OF_MONTH); i++) {
       System.out.printf("%2d", i);
       count++;
 
